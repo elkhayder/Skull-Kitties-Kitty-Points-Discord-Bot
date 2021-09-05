@@ -1,7 +1,6 @@
 import { Message } from "discord.js";
 import { DEFAULT_EMBED_STYLING } from "../constants";
 import { HandlerType } from "../types";
-import addPointsOnMessage from "./addPointsOnMessage";
 import dailyPointsHandler from "./dailyPointsHandler";
 import scratchPointsHandler from "./scratchPointsHandler";
 import showProfileHandler from "./showProfileHandler";
@@ -30,7 +29,7 @@ export const commandHandler = (message: Message) => {
          embeds: [
             {
                ...DEFAULT_EMBED_STYLING,
-               description: `**I haven't learned this trick yet, Kitty!**`,
+               description: `**I haven't learned this trick yet!**`,
             },
          ],
       });

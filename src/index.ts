@@ -1,5 +1,6 @@
 import Discord, { Intents } from "discord.js";
 import mongoose from "mongoose";
+import cron from "node-cron";
 require("dotenv").config();
 
 import { COMMAND_PREFIX, GUILD_ID } from "./constants";
@@ -32,10 +33,12 @@ client.on("messageCreate", (message) => {
    }
 });
 
-client.on("ready", () => {
+client.on("ready", (c) => {
    console.log("Ready");
 
-   setInterval(() => sendDailyUpdate(client), 1000 * 10);
+   cron.schedule("0 0 21 * *", () => {
+      sendDailyUpdate(c);
+   });
 });
 
 client.login(process.env.DISCORD_TOKEN);
