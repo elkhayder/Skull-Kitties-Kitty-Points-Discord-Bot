@@ -3,4 +3,4 @@
 -  [x] .profile to give the total number of kitty points gained.
 -  [x] 2 kitty points for every image shared in the meme channel
 -  [x] 1 kitty point to every user whenever they message anywhere in the whole server.
--  [] Daily update of Ranking of kitty points in the rank channel
+-  [x] Daily update of Ranking of kitty points in the rank channel

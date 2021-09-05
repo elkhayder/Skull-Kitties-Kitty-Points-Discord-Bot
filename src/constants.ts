@@ -1,10 +1,10 @@
-export const GUILD_ID = "689814299014725641";
+export const GUILD_ID = "874382171538849802";
 export const COMMAND_PREFIX = ".";
 
 export const DAILY_POINTS = 50;
 
-export const MEMES_CHANNEL = "692829367344038079";
-export const UPDATES_CHANNEL = "872072474483908620";
+export const MEMES_CHANNEL = "874696034633269288";
+export const UPDATES_CHANNEL = "874384130429841448";
 
 export const DEFAULT_EMBED_STYLING = {
    color: 0xffff00,

@@ -36,9 +36,15 @@ client.on("messageCreate", (message) => {
 client.on("ready", (c) => {
    console.log("Ready");
 
-   cron.schedule("0 0 21 * *", () => {
-      sendDailyUpdate(c);
+   client.user?.setPresence({
+      activities: [{ type: "LISTENING", name: "your messages" }],
    });
+
+   cron
+      .schedule("0 0 21 * *", () => {
+         sendDailyUpdate(c);
+      })
+      .start();
 });
 
 client.login(process.env.DISCORD_TOKEN);
