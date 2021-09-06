@@ -3,10 +3,11 @@ import mongoose from "mongoose";
 import cron from "node-cron";
 require("dotenv").config();
 
-import { COMMAND_PREFIX, GUILD_ID } from "./constants";
+import { COMMAND_PREFIX, DEFAULT_EMBED_STYLING, GUILD_ID } from "./constants";
 import addPointsOnMessage from "./handlers/addPointsOnMessage";
 import sendDailyUpdate from "./handlers/sendDailyUpdate";
 import { commandHandler } from "./handlers/_index";
+import { getUpdatesChannel } from "./helpers";
 
 const client = new Discord.Client({
    intents: [
@@ -33,7 +34,7 @@ client.on("messageCreate", (message) => {
    }
 });
 
-client.on("ready", (c) => {
+client.on("ready", async (c) => {
    console.log("Ready");
 
    client.user?.setPresence({
@@ -45,6 +46,19 @@ client.on("ready", (c) => {
          sendDailyUpdate(c);
       })
       .start();
+
+   const channel = await getUpdatesChannel(client);
+
+   if (channel) {
+      channel.send({
+         embeds: [
+            {
+               ...DEFAULT_EMBED_STYLING,
+               description: "**I'm here kitties, Purrr!**",
+            },
+         ],
+      });
+   }
 });
 
 client.login(process.env.DISCORD_TOKEN);

@@ -1,24 +1,10 @@
 import Discord from "discord.js";
 import { DEFAULT_EMBED_STYLING, GUILD_ID, UPDATES_CHANNEL } from "../constants";
+import { getUpdatesChannel } from "../helpers";
 import User from "../models/user";
 
 const sendDailyUpdate = async (client: Discord.Client<boolean>) => {
-   const guilds = await client.guilds.fetch();
-   const guild = await guilds
-      .filter((g) => g.id === GUILD_ID)
-      .first()
-      ?.fetch();
-
-   if (!guild) return;
-
-   const channels = await guild.channels.fetch();
-   const channel = (await channels
-      .filter(
-         (c) =>
-            c.id === UPDATES_CHANNEL && c.isText() && c.type === "GUILD_TEXT"
-      )
-      .first()
-      ?.fetch()) as Discord.TextChannel | undefined;
+   const channel = await getUpdatesChannel(client);
 
    if (!channel) return;
 
