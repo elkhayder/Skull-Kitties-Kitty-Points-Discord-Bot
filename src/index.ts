@@ -52,18 +52,18 @@ client.once("ready", async (c) => {
       })
       .start();
 
-   const channel = await getUpdatesChannel(client);
+   // const channel = await getUpdatesChannel(client);
 
-   if (channel) {
-      channel.send({
-         embeds: [
-            {
-               ...DEFAULT_EMBED_STYLING,
-               description: `**I'm here kitties, Purrr!\nWe can chat in <#${ALLOWED_CHANNELS[0]}>**`,
-            },
-         ],
-      });
-   }
+   // if (channel) {
+   //    channel.send({
+   //       embeds: [
+   //          {
+   //             ...DEFAULT_EMBED_STYLING,
+   //             description: `**I'm here kitties, Purrr!\nWe can chat in <#${ALLOWED_CHANNELS[0]}>**`,
+   //          },
+   //       ],
+   //    });
+   // }
 });
 
 client.login(process.env.DISCORD_TOKEN);
