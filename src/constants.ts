@@ -6,6 +6,8 @@ export const DAILY_POINTS = 50;
 export const MEMES_CHANNEL = "874696034633269288";
 export const UPDATES_CHANNEL = "874384130429841448";
 
+export const ALLOWED_CHANNELS = ["877520282045280266"];
+
 export const DEFAULT_EMBED_STYLING = {
    color: 0xffff00,
    author: {

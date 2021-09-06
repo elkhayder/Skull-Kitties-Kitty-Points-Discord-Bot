@@ -1,5 +1,6 @@
+import { channel } from "diagnostics_channel";
 import { Message } from "discord.js";
-import { DEFAULT_EMBED_STYLING } from "../constants";
+import { ALLOWED_CHANNELS, DEFAULT_EMBED_STYLING } from "../constants";
 import { HandlerType } from "../types";
 import dailyPointsHandler from "./dailyPointsHandler";
 import scratchPointsHandler from "./scratchPointsHandler";
@@ -21,6 +22,11 @@ const commands: HandlerType[] = [
 ];
 
 export const commandHandler = (message: Message) => {
+   if (!ALLOWED_CHANNELS.includes(message.channelId)) {
+      // TODO: inform user that commands are not allowed here
+      return;
+   }
+
    const askedCommand = message.content.split(" ")[0].substring(1);
    const filteredCommands = commands.filter((c) => c.command === askedCommand);
 
