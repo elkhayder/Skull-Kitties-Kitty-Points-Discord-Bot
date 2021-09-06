@@ -39,7 +39,7 @@ client.on("messageCreate", (message) => {
    }
 });
 
-client.on("ready", async (c) => {
+client.once("ready", async (c) => {
    console.log("Ready");
 
    client.user?.setPresence({

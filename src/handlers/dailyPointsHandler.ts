@@ -22,7 +22,7 @@ const dailyPointsHandler = async (message: Discord.Message) => {
          embeds: [
             {
                ...DEFAULT_EMBED_STYLING,
-               description: `**You claimed you ${DAILY_POINTS} Kitty Point,\nCome back tomorrow for more**`,
+               description: `**You already claimed your daily ${DAILY_POINTS} Kitty Point,\nCome back tomorrow for more**`,
             },
          ],
       });
