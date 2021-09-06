@@ -3,7 +3,12 @@ import mongoose from "mongoose";
 import cron from "node-cron";
 require("dotenv").config();
 
-import { COMMAND_PREFIX, DEFAULT_EMBED_STYLING, GUILD_ID } from "./constants";
+import {
+   ALLOWED_CHANNELS,
+   COMMAND_PREFIX,
+   DEFAULT_EMBED_STYLING,
+   GUILD_ID,
+} from "./constants";
 import addPointsOnMessage from "./handlers/addPointsOnMessage";
 import sendDailyUpdate from "./handlers/sendDailyUpdate";
 import { commandHandler } from "./handlers/_index";
@@ -54,7 +59,7 @@ client.on("ready", async (c) => {
          embeds: [
             {
                ...DEFAULT_EMBED_STYLING,
-               description: "**I'm here kitties, Purrr!**",
+               description: `**I'm here kitties, Purrr!\nWe can chat in <#${ALLOWED_CHANNELS[0]}>**`,
             },
          ],
       });
