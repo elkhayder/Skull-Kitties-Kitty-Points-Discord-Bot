@@ -1,5 +1,5 @@
 -  [x] .points to give daily 50 kitty points - 24 hours time period
--  [x] .scratch @username - Steals random number of kitty points from the @username between 5 to 15 and is - added to the user who uses this command - 16 hour time period
+-  [x] .scratch @username - Steals random number of kitty points from the @username between 5 to 15 and is added to the user who uses this command - 16 hour time period
 -  [x] .profile to give the total number of kitty points gained.
 -  [x] 2 kitty points for every image shared in the meme channel
 -  [x] 1 kitty point to every user whenever they message anywhere in the whole server.

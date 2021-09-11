@@ -10,7 +10,7 @@ const scratchPointsHandler = async (message: Discord.Message) => {
 
    if (!mention) {
       message.channel.send(
-         `You haven't mantioned whose back you wanna scratch :p`
+         `You haven't mentioned whose back you wanna scratch :stuck_out_tongue:`
       );
       return;
    }
