@@ -9,9 +9,14 @@ const scratchPointsHandler = async (message: Discord.Message) => {
    const mention = message.mentions.members?.first();
 
    if (!mention) {
-      message.channel.send(
-         `You haven't mentioned whose back you wanna scratch :stuck_out_tongue:`
-      );
+      message.channel.send({
+         embeds: [
+            {
+               ...DEFAULT_EMBED_STYLING,
+               description: `**You haven't mentioned whose back you wanna scratch** :stuck_out_tongue:`,
+            },
+         ],
+      });
       return;
    }
 
