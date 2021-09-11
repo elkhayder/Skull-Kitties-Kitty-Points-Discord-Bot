@@ -46,11 +46,13 @@ client.once("ready", async (c) => {
       activities: [{ type: "LISTENING", name: "your messages" }],
    });
 
-   cron
-      .schedule("0 0 21 * *", () => {
+   cron.schedule(
+      "0 0 21 * *",
+      () => {
          sendDailyUpdate(c);
-      })
-      .start();
+      },
+      { timezone: "Africa/Casablanca", scheduled: true }
+   );
 
    // const channel = await getUpdatesChannel(client);
 
